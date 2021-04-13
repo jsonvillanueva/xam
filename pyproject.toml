@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Ready-to-deploy website for generating exams for students."
 authors = ["Jason Villanueva <a@jsonvillanueva.com>"]
 license="MIT"
-readme="README.md"
+readme="README.rst"
 repository="https://github.com/jsonvillanueva/"
 classifiers= [
     "Development Status :: 1 - Planning",
@@ -14,17 +14,23 @@ classifiers= [
     "Programming Language :: Python :: 3.9",
     "Natural Language :: English",
     ]
+packages = [
+    { include = "examgen" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 flask = "^1"
-flask-sqlalchemy = "^2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.0"
 isort = "^5.8"
 pre-commit = "^2.11.1"
-pytest = "^5.2"
+pytest = "^6.2"
+coverage = "*"
+
+[tool.poetry.dev-dependencies.black]
+version = "^20.8b1"
 
 [tool.poetry.plugins."console_scripts"]
 "myapp" = "myapp.__main__:main"
