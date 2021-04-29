@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Course</h1>
+<form method="POST"> {% csrf_token %}
+    <h1>Do you really want to delete the course?</h1>
+    <p> <input type="submit" value="Save" /> <a href="../"> Cancel</a> </p>
+</form>
+{% endblock %}
